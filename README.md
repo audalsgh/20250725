@@ -17,10 +17,62 @@ YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 
 
 ### 주피터 랩의 노트북 셀에서 진행
 1. 패키지/FFmpeg 설치
-<img width="2183" height="161" alt="image" src="https://github.com/user-attachments/assets/3a5ff5d3-2bf1-4eba-be14-b9393c4bb962" />
+<img width="2183" height="161" alt="image" src="https://github.com/user-attachments/assets/3a5ff5d3-2bf1-4eba-be14-b9393c4bb962" /><br>
+```python
+!pip install -U ultralytics>=8.3.0 yt-dlp opencv-python tqdm
+!apt-get update && apt-get -y install ffmpeg
+```
 
 2. 유튜브 다운로드 및 추론. 속도가 30초 정도로 매우 빠르다.
-<img width="753" height="843" alt="image" src="https://github.com/user-attachments/assets/ae5ddcd1-7cd7-43c4-bdff-d78d7fb47047" />
+<img width="753" height="843" alt="image" src="https://github.com/user-attachments/assets/ae5ddcd1-7cd7-43c4-bdff-d78d7fb47047" /><br>
+```python
+import yt_dlp, os, glob
+from ultralytics import YOLO
+
+# -------------------
+# 1) 유튜브 다운로드
+# -------------------
+YOUTUBE_URL = "https://www.youtube.com/watch?v=BhTLa3fdZhE&pp=ygUT64-E66Gc7KO87ZaJIOyYgeyDgQ%3D%3D"
+
+os.makedirs("videos", exist_ok=True)
+video_path = "videos/input.mp4"
+
+ydl_opts = {
+    "outtmpl": video_path,
+    "format": "mp4/bestvideo+bestaudio/best",
+    "merge_output_format": "mp4",
+}
+with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+    ydl.download([YOUTUBE_URL])
+
+print("다운로드 완료:", video_path)
+
+# -------------------
+# 2) YOLO 추론
+# -------------------
+MODEL_WEIGHTS = "yolo11n.pt"   # 안 되면 "yolov8n.pt"
+model = YOLO(MODEL_WEIGHTS)
+
+names = model.names
+if isinstance(names, dict):
+    tl_idx = [k for k, v in names.items() if v == 'traffic light'][0]
+else:
+    tl_idx = names.index('traffic light')
+
+save_dir = "runs/detect/traffic_light"
+results = model.predict(
+    source=video_path,
+    conf=0.25,
+    classes=[tl_idx],
+    save=True,
+    project="runs/detect",
+    name="traffic_light",
+    vid_stride=1
+)
+
+out_videos = glob.glob(os.path.join(save_dir, "*.mp4"))
+print("결과 비디오:", out_videos[0] if out_videos else "없음")
+```
 
 3. 왼쪽 메뉴에서 runs/detect/traffic_light/ 내부에 저장되는 결과영상을 우클릭하여 다운받기.
 <img width="324" height="157" alt="image" src="https://github.com/user-attachments/assets/2768990d-ba96-4456-9b04-f38f77679f10" />
