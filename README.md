@@ -16,6 +16,13 @@ YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 
 <img width="1958" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8c8b1bf-dc74-4c96-9e1c-ee2960b67b3d" /><br>
 -> 화질때문인지 YOLOv11 치고 정확도가 엄청 높진 않고, 속도 역시 2분 이상으로 오래걸렸다.
 
+```python
+⚙️ YOLO 추론 처리 정보
+ - 전체 처리 시간: 128.99초
+ - 처리된 프레임 수: 6091
+ - 평균 추론 FPS: 47.22 frames/sec
+```
+
 ### 주피터 랩의 노트북 셀에서 진행
 1. 패키지/FFmpeg 설치
 <img width="2183" height="161" alt="image" src="https://github.com/user-attachments/assets/3a5ff5d3-2bf1-4eba-be14-b9393c4bb962" /><br>
