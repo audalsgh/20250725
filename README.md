@@ -10,15 +10,16 @@
 ## 2. Colab과 Jupyter lab 모두에서 "교통신호 인식" 코드를 사용해보고, 속도 비교하기
 YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 PyTorch 위에서 실행되고 있음.
 
+### 코랩에서 진행
 [코랩에서 실행한 코드 링크](0725_traffic_light_in_colab.ipynb)<br>
 <img width="1958" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8c8b1bf-dc74-4c96-9e1c-ee2960b67b3d" /><br>
--> 화질때문인지 YOLOv11 치고 정확도가 엄청 높진 않다.
+-> 화질때문인지 YOLOv11 치고 정확도가 엄청 높진 않고, 속도 역시 2분 이상으로 오래걸렸다.
 
 ### 주피터 랩의 노트북 셀에서 진행
 1. 패키지/FFmpeg 설치
 <img width="2183" height="161" alt="image" src="https://github.com/user-attachments/assets/3a5ff5d3-2bf1-4eba-be14-b9393c4bb962" />
 
-2. 유튜브 다운로드 및 추론
+2. 유튜브 다운로드 및 추론. 속도가 30초 정도로 매우 빠르다.
 <img width="753" height="843" alt="image" src="https://github.com/user-attachments/assets/ae5ddcd1-7cd7-43c4-bdff-d78d7fb47047" />
 
 3. 왼쪽 메뉴에서 runs/detect/traffic_light/ 내부에 저장되는 결과영상을 우클릭하여 다운받기.
