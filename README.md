@@ -8,3 +8,6 @@
 <img width="531" height="451" alt="image" src="https://github.com/user-attachments/assets/24e18c90-7261-408e-ae8d-c578bb9f79f1" />
 
 ## Colab과 Jupyter lab 모두에서 "교통신호 인식" 코드를 사용해보고, 속도 비교하기
+[코랩에서 실행한 코드 링크](0725_traffic_light_in_colab.ipynb)<br>
+<img width="1958" height="1080" alt="image" src="https://github.com/user-attachments/assets/d8c8b1bf-dc74-4c96-9e1c-ee2960b67b3d" /><br>
+화질때문인지 YOLOv11 치고 정확도가 엄청 높진 않다.
