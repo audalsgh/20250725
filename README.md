@@ -87,4 +87,4 @@ print("결과 비디오:", out_videos[0] if out_videos else "없음")
 4. 결과영상 : 정확도는 큰 차이가 없어보이나, 다운로드 속도와 추론 속도가 압도적으로 빠른게 특징!
 <img width="1925" height="1080" alt="image" src="https://github.com/user-attachments/assets/0167a8fc-43ce-4c71-a91b-a0ddc1cc74ed" />
 
-[makesense ai를 사용한 양근영님 깃허브](https://github.com/audalsgh/20250725/blob/main/README.md)
+[makesense ai를 사용한 양근영님 깃허브]([https://github.com/audalsgh/20250725/blob/main/README.md](https://github.com/ysg1202/automoblile/blob/main/ObjectDetection%20with%20YOLO.md)
