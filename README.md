@@ -25,7 +25,6 @@ YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 
 ```
 
 2. 유튜브 다운로드 및 추론. **속도가 30초 정도로 매우 빠르다.**
-<img width="753" height="843" alt="image" src="https://github.com/user-attachments/assets/ae5ddcd1-7cd7-43c4-bdff-d78d7fb47047" /><br>
 ```python
 import yt_dlp, os, glob
 from ultralytics import YOLO
