@@ -8,7 +8,8 @@
 <img width="531" height="451" alt="image" src="https://github.com/user-attachments/assets/24e18c90-7261-408e-ae8d-c578bb9f79f1" />
 
 ## 2. Colab과 Jupyter lab 모두에서 "교통신호 인식" 코드를 사용해보고, 속도 비교하기
-YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 PyTorch 위에서 실행되고 있음.
+YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 PyTorch 위에서 실행되고 있음.<br>
+챗GPT에게 Colab용 코드와 Jupyter lab용 코드를 모두 짜달라고 요청함.
 
 ### 코랩에서 진행
 [코랩에서 실행한 코드 링크](0725_traffic_light_in_colab.ipynb)<br>
@@ -23,7 +24,7 @@ YOLO는 내부적으로 RunPod PyTorch 2.8.0 환경 기반이고, 추론 또한 
 !apt-get update && apt-get -y install ffmpeg
 ```
 
-2. 유튜브 다운로드 및 추론. 속도가 30초 정도로 매우 빠르다.
+2. 유튜브 다운로드 및 추론. **속도가 30초 정도로 매우 빠르다.**
 <img width="753" height="843" alt="image" src="https://github.com/user-attachments/assets/ae5ddcd1-7cd7-43c4-bdff-d78d7fb47047" /><br>
 ```python
 import yt_dlp, os, glob
